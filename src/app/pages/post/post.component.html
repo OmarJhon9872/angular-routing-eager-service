@@ -1,0 +1,16 @@
+<ul class="list-group">
+
+    <!-- Todo el componente se movio a individual-post -->
+
+    <!-- <li class="list-group-item" *ngFor="let item of mensajes | async">
+        <h3>{{item.title}}</h3>
+        <span>{{item.body}}</span>
+    </li> -->
+    <!-- Lo de arriba esta almacenado en este componente -->
+    <!-- el (clickIndividualPost) escuchara los eventos que emita el hijo con $ -->
+    <app-individual-post *ngFor="let mensaje of mensajes | async"
+        [mensaje] = "mensaje"
+        (clickIndividualPost) = "escucharEvento($event)">
+    </app-individual-post>
+
+</ul>
